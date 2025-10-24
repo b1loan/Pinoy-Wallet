@@ -1,0 +1,113 @@
+/* Mobile-first styles */
+:root{
+  --bg1: #0077ff;
+  --bg2: #ffffff;
+  --glass: rgba(255,255,255,0.08);
+  --card: rgba(255,255,255,0.95);
+  --accent: #005ec2;
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(160deg, rgba(0,119,255,0.12), rgba(255,255,255,0.06));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background-attachment: fixed;
+}
+
+/* mobile wrapper */
+.mobile-app{
+  max-width:420px;
+  margin:0 auto;
+  padding:16px;
+  box-sizing:border-box;
+  position:relative;
+  min-height:100vh;
+  background:transparent;
+}
+
+/* top bar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.logo{height:44px; width:auto; background:transparent; border-radius:6px;}
+.login-btn{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:6px 10px;border-radius:8px;font-weight:600}
+
+.hero{
+  padding:18px 12px;
+  margin-top:8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.06);
+  text-align:left;
+}
+.hero h1{font-size:20px; margin:0 0 8px 0; color:#00224d}
+.hero .sub{margin:0 0 12px 0; color:#153a66}
+.hero-cta{display:flex;gap:8px}
+.btn{padding:10px 12px;border-radius:10px;border:0;font-weight:700;flex:1}
+.btn.primary{background:linear-gradient(90deg,var(--bg1),var(--accent)); color:white}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+
+.card{margin:14px 0;padding:12px;border-radius:12px;background:var(--card)}
+.features h3{margin:0 0 8px 0}
+.feature-list{padding:0;margin:6px 0 12px 0;list-style:none;display:grid;gap:6px}
+.feature-list li{background:var(--glass);padding:8px;border-radius:8px;font-weight:600}
+.verified{color:green;font-weight:800}
+
+/* calculator */
+.calculator input{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-size:16px}
+.calc-row{display:flex;justify-content:space-between;padding:6px 0;font-weight:700}
+.small{font-size:12px;color:#5b6b7a}
+
+.trust{text-align:center}
+
+.how ol{padding-left:18px;margin:8px 0}
+.rates-table{width:100%;border-collapse:collapse}
+.rates-table th,.rates-table td{padding:8px;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left}
+.footer{padding:16px;text-align:center;color:#3b4b64}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(0deg, rgba(2,6,23,0.42), rgba(2,6,23,0.42));backdrop-filter:blur(4px);z-index:40;opacity:0;pointer-events:none;transition:opacity .18s}
+.modal[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.modal-inner{width:92%;max-width:420px;background:white;padding:14px;border-radius:12px;position:relative}
+.modal-inner input{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.modal-inner fieldset{border:none;padding:0;margin:6px 0;display:flex;gap:6px}
+.modal-inner .modal-actions{display:flex;gap:8px;margin-top:10px}
+.modal .close{position:absolute;right:10px;top:8px;border:0;background:transparent;font-size:18px}
+
+/* falling currencies container fills viewport */
+#currency-fall{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.coin{
+  position:absolute;
+  top:-50px;
+  font-size:20px;
+  opacity:0.9;
+  transform:translate3d(0,0,0);
+  will-change:transform,opacity;
+  animation-name:fall, sway;
+  animation-duration:6s, 3s;
+  animation-iteration-count:infinite, infinite;
+  animation-timing-function:linear, ease-in-out;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh) rotate(0deg)}
+  100%{transform:translateY(120vh) rotate(360deg)}
+}
+@keyframes sway{
+  0%{transform:translateX(0)}
+  50%{transform:translateX(40px)}
+  100%{transform:translateX(0)}
+}
+
+/* Desktop overlay - show notice */
+.hidden-on-mobile{display:none}
+@media (min-width: 768px){
+  .mobile-app{display:none}
+  .hidden-on-mobile{display:block;position:fixed;inset:0;background:linear-gradient(180deg,#fff,#f4f7fb);display:flex;align-items:center;justify-content:center;z-index:100}
+  .desktop-message{max-width:600px;padding:20px;text-align:center;border-radius:12px;background:white;box-shadow:0 10px 40px rgba(0,0,0,0.08)}
+}
