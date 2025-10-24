@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #ffffff, #e6f0ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background: #003366;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+.hero {
+    padding: 60px 20px;
+    background: url('falling-bg.gif') no-repeat center center/cover;
+    color: #003366;
+}
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 10px;
+}
+.primary { background: #007bff; color: white; }
+.secondary { background: gold; color: black; }
+footer {
+    background: #001f3f;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
