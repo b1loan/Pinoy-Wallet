@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Pinoy Wallet — Convert Card to GCash / Maya</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="currency-fall" id="currency-fall" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header>
+    <div class="logo"><img src="https://raw.githubusercontent.com/b1loan/Pinoy-Wallet/596fa015293a7665982bab240d2fc0cdabb96b2e/9E8563FD-308D-4E3B-96F4-86B831BAD402.png" alt="Pinoy Wallet logo"></div>
+    <div style="color:white;font-weight:700">PINOY WALLET</div>
+    <nav>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="rates.html">Rates</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" role="region" aria-label="Hero">
+      <h1>Convert Your Credit Card Balance to GCash or Maya — Instantly and Securely.</h1>
+      <p class="lead">Fast, legal, and transparent fund transfers with just <strong>1.2% total fee</strong>.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="startNow">Start Now</button>
+        <a class="btn btn-ghost" href="#learn" id="learnMore">Learn More</a>
+      </div>
+
+      <div class="features" style="margin-top:12px">
+        <div class="card">
+          <div class="small">0.594% <strong>Processing Fee</strong></div>
+        </div>
+        <div class="card">
+          <div class="small">0.612% <strong>Platform Fee</strong></div>
+        </div>
+        <div class="card">
+          <div class="small">Safe and Secure — <strong>Verified</strong></div>
+        </div>
+        <div class="card">
+          <div class="small">Trusted by 5,000+ users</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div style="font-weight:700;margin-bottom:8px">Sample Calculator</div>
+        <div class="calc">
+          <input id="amount" type="number" min="100" step="1" placeholder="Enter amount (₱)">
+          <button class="btn btn-primary" id="calcBtn" style="flex:0 0 110px">See Fees</button>
+        </div>
+        <div id="calcResult" style="margin-top:8px;font-weight:700">Total: — · Fee: — · You receive: —</div>
+      </div>
+
+    </section>
+
+    <section id="login" style="margin-top:12px">
+      <div class="login-form">
+        <div style="font-weight:800;margin-bottom:8px">LOG IN</div>
+        <label class="small">GCASH/MAYA NUMBER</label>
+        <input type="text" id="walletNumber" placeholder="09XXXXXXXXX">
+        <label class="small">GMAIL</label>
+        <input type="email" id="gmail" placeholder="you@gmail.com">
+        <label class="small">NAME</label>
+        <input type="text" id="first" placeholder="First">
+        <input type="text" id="middle" placeholder="Middle" style="margin-top:6px">
+        <input type="text" id="last" placeholder="Last" style="margin-top:6px">
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn btn-primary" id="loginBtn" style="flex:1">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="learn" style="margin-top:14px;color:white">
+      <h2 style="color:white;margin:0 0 6px 0">Why choose us</h2>
+      <p style="margin:0 0 6px 0;color:rgba(255,255,255,0.9)">Secured by GCash / Maya Business / BSP-registered partners.</p>
+      <a class="btn btn-primary" href="how-it-works.html" style="display:inline-block;margin-top:8px">Start Your First Transfer Now</a>
+    </section>
+
+  </main>
+
+  <footer>
+    © B1 Group • CS201916699 • Certificate No.3119
+  </footer>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
